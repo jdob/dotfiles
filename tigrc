@@ -1,0 +1,5 @@
+color diff-stat   blue    default  bold
+color date        blue    default  bold
+color "-"         red     default  bold
+color "+"         green   default  bold
+color "@@"        magenta default  bold
