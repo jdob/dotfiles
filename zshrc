@@ -45,6 +45,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 alias vi=vim
 alias emacs=emacs -nw
 
+# Functions
+x () { $*; notify-send "COMPLETED - $*" }
+
 # libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
