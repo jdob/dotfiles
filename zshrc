@@ -42,9 +42,13 @@ export LS_COLORS
 unset GREP_OPTIONS
 
 # virtualenvwrapper
-WORKON_HOME=~/.envs
-source /usr/bin/virtualenvwrapper.sh 
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+DISABLE_VENV=${DISABLE_VENV:-}
+
+if [ -z "$DISABLE_VENV" ]; then
+  WORKON_HOME=~/.envs
+  source /usr/bin/virtualenvwrapper.sh 
+  export VIRTUAL_ENV_DISABLE_PROMPT=1
+fi
 
 # Aliases
 alias vi=vim
