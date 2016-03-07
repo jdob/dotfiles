@@ -1,3 +1,8 @@
+# Load pre-override settings
+if [ -f ~/.localrc-pre ]; then
+    . ~/.localrc-pre
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/code/oh-my-zsh
 
