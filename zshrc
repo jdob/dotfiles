@@ -52,7 +52,7 @@ alias vi=vim
 alias emacs=emacs -nw
 
 # Functions
-x () { $*; notify-send "COMPLETED - $*" }
+x () { $*; notify-send "COMPLETED - $*"; aplay ~/.sounds/pause-mario.wav -q }
 
 # libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
