@@ -50,9 +50,19 @@ fi
 # Aliases
 alias vi=vim
 alias emacs=emacs -nw
+alias o=openstack
 
 # Functions
-x () { $*; notify-send "COMPLETED - $*"; aplay ~/.sounds/pause-mario.wav -q }
+x () {
+  $*
+  RESULT=$?
+  RESULT_TXT="FAILED"
+  if [ "$RESULT" -eq "0" ]; then
+    RESULT_TXT="SUCCESS"
+  fi
+  notify-send "$RESULT_TXT :: $*"
+  aplay ~/.sounds/pause-mario.wav -q
+}
 
 # libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
