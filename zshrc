@@ -53,15 +53,17 @@ alias emacs=emacs -nw
 alias o=openstack
 
 # Functions
-x () {
+bb () {
   $*
   RESULT=$?
   RESULT_TXT="FAILED"
+  SOUND="/home/jdob/.sounds/bb8-failure.wav"
   if [ "$RESULT" -eq "0" ]; then
     RESULT_TXT="SUCCESS"
+    SOUND="/home/jdob/.sounds/bb8-success.wav"
   fi
   notify-send "$RESULT_TXT :: $*"
-  aplay ~/.sounds/pause-mario.wav -q
+  aplay "$SOUND" -q
 }
 
 # libvirt
