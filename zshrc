@@ -66,6 +66,10 @@ bb () {
   aplay "$SOUND" -q
 }
 
+git-branch-cleanup () {
+  git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D
+}
+
 # libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
