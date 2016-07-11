@@ -70,6 +70,22 @@ git-branch-cleanup () {
   git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D
 }
 
+hc () {
+  STACK_NAME=`basename $1 .yaml`
+  TEMPLATE="$STACK_NAME.yaml"
+  bb openstack stack create $STACK_NAME --template $TEMPLATE --wait
+}
+
+hl () {
+  bb openstack stack list
+}
+
+hd () {
+  STACK_NAME=`basename $1 .yaml`
+  bb openstack stack delete $STACK_NAME --wait --yes
+}
+
+
 # libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
