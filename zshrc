@@ -26,8 +26,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
 setopt nocorrectall
 
 alias less="less -FiX"
@@ -70,21 +68,17 @@ git-branch-cleanup () {
   git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D
 }
 
-hc () {
-  STACK_NAME=`basename $1 .yaml`
-  TEMPLATE="$STACK_NAME.yaml"
-  bb openstack stack create $STACK_NAME --template $TEMPLATE --wait
+docker-clean() {
+  docker rm $(docker ps -a -q)
 }
 
-hl () {
-  bb openstack stack list
+docker-image-clean() {
+  docker rmi $(docker images -q)
 }
 
-hd () {
-  STACK_NAME=`basename $1 .yaml`
-  bb openstack stack delete $STACK_NAME --wait --yes
-}
-
+# OpenShift
+export GOPATH=$HOME/.go
+export OPENSHIFT_MEMORY=4192
 
 # libvirt
 export LIBVIRT_DEFAULT_URI=qemu:///system
