@@ -1,13 +1,21 @@
 {
-    "files.autoSave": "onFocusChange",
-    "editor.fontSize": 14,
-    "editor.fontFamily": "Monaco, 'Courier New', monospace",
-    "window.zoomLevel": 1,
     "editor.cursorStyle": "block-outline",
+    "editor.fontFamily": "Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.minimap.enabled": false,
+    "editor.rulers": [80],
+
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+
+    "terminal.integrated.fontSize": 14,
+
+    "window.zoomLevel": 1,
+
     "workbench.colorCustomizations": {
         "statusBar.background":"#1A1A1A",
         "statusBar.noFolderBackground" : "#212121",
         "statusBar.debuggingBackground": "#263238"
     },
-    "terminal.integrated.fontSize": 14
+    "workbench.sideBar.location": "left"
 }
