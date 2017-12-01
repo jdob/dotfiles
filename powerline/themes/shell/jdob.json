@@ -33,6 +33,13 @@
 			{
 				"function": "powerline.segments.common.vcs.branch",
 				"priority": 40
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"args": {
+					"format":"%I:%M"
+				},
+				"priority": 80
 			}
 		]
 	}
