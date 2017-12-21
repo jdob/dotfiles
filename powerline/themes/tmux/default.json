@@ -3,7 +3,6 @@
 		"right": [
 			{
 				"function": "powerline.segments.common.time.date",
-				"name": "time",
 				"args": {
 					"format": "%I:%M"
 				}

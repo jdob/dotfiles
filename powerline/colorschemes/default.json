@@ -11,7 +11,7 @@
 		"background":                 { "fg": "white", "bg": "gray0", "attrs": [] },
 		"background:divider":         { "fg": "gray5", "bg": "gray0", "attrs": [] },
 		"session":                    { "fg": "black", "bg": "gray10", "attrs": ["bold"] },
-		"date":                       { "fg": "gray9", "bg": "darkgreen", "attrs": [] },
+		"date":                       { "fg": "gray10", "bg": "darkestblue", "attrs": [] },
 		"time":                       { "fg": "gray10", "bg": "gray2", "attrs": ["bold"] },
 		"time:divider":               { "fg": "gray5", "bg": "gray2", "attrs": [] },
 		"email_alert":                "warning:regular",
