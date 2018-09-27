@@ -1,6 +1,7 @@
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+let g:Powerline_symbols = 'unicode'
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 set background=dark
 set laststatus=2
