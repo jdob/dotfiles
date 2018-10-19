@@ -4,7 +4,7 @@ if [ -f ~/.localrc-pre ]; then
 fi
 
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/code/oh-my-zsh
+ZSH=$HOME/Code/oh-my-zsh
 
 # Set name of the theme to load.
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -25,8 +25,9 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git docker sudo)
 
+# Theme; enable whatever is installed on the machine
 # source $ZSH/oh-my-zsh.sh
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+# source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 setopt nocorrectall
 
