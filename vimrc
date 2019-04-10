@@ -6,3 +6,7 @@ python3 del powerline_setup
 set background=dark
 set laststatus=2
 set backspace=indent,eol,start
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
