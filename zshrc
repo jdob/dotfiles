@@ -59,11 +59,19 @@ fi
 
 alias less="less -FiX"
 alias tree="tree -C"
+
 alias ls="ls --color"
 alias ll="ls -l"
 alias ..="cd .."
+
+alias c="colorls"
+alias cs="colorls -1 --sd"
+alias csa="colorls -A"
+
 alias vi=vim
 alias emacs=emacs -nw
+
+alias k=kubectl
 
 # -- Python ----------
 
