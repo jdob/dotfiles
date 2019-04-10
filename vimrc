@@ -5,3 +5,4 @@ python3 del powerline_setup
 
 set background=dark
 set laststatus=2
+set backspace=indent,eol,start
