@@ -1,4 +1,11 @@
 {
+    "segment_data": {
+        "hostname": {
+            "args": {
+                "only_if_ssh": true
+            }
+        }
+    },
 	"segments": {
 		"left": [
 			{
@@ -6,7 +13,8 @@
 			},
 			{
 				"function": "powerline.segments.common.net.hostname",
-				"priority": 10
+				"priority": 10,
+                "before": "\uf79f "
 			},
 			{
 				"function": "powerline.segments.common.env.virtualenv",
