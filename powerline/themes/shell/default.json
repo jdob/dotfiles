@@ -14,7 +14,8 @@
 			},
 			{
 				"function": "powerline.segments.shell.cwd",
-				"priority": 10
+				"priority": 10,
+                "before": "\uf115"
 			},
 			{
 				"function": "powerline.segments.shell.jobnum",
@@ -32,14 +33,16 @@
 			},
 			{
 				"function": "powerline.segments.common.vcs.branch",
-				"priority": 40
+				"priority": 40,
+                "after": " \uf113 "
 			},
 			{
 				"function": "powerline.segments.common.time.date",
 				"args": {
 					"format":"%I:%M"
 				},
-				"priority": 80
+				"priority": 80,
+                "after": " \ue386"
 			}
 		]
 	}
