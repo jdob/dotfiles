@@ -1,12 +1,12 @@
 {
 	"name": "Default",
 	"groups": {
-		"information:additional":     { "fg": "gray9", "bg": "gray4", "attrs": [] },
+		"information:additional":     { "fg": "gray9", "bg": "darkestcyan", "attrs": [] },
 		"information:regular":        { "fg": "gray10", "bg": "darkestpurple", "attrs": [] },
 		"information:highlighted":    { "fg": "white", "bg": "gray4", "attrs": [] },
 		"information:priority":       { "fg": "brightyellow", "bg": "mediumorange", "attrs": [] },
 		"warning:regular":            { "fg": "white", "bg": "brightred", "attrs": ["bold"] },
-		"critical:failure":           { "fg": "white", "bg": "darkestred", "attrs": [] },
+		"critical:failure":           { "fg": "white", "bg": "mediumred", "attrs": [] },
 		"critical:success":           { "fg": "white", "bg": "darkestgreen", "attrs": [] },
 		"background":                 { "fg": "white", "bg": "gray0", "attrs": [] },
 		"background:divider":         { "fg": "gray5", "bg": "gray0", "attrs": [] },
@@ -49,7 +49,7 @@
 		"stash:divider":              "branch:divider",
 		"cwd":                        "information:additional",
 		"cwd:current_folder":         "information:regular",
-		"cwd:divider":                { "fg": "gray7", "bg": "gray4", "attrs": [] },
+		"cwd:divider":                { "fg": "gray8", "bg": "darkestcyan", "attrs": [] },
 		"virtualenv":                 { "fg": "white", "bg": "darkcyan", "attrs": [] },
 		"attached_clients":           { "fg": "gray8", "bg": "gray0", "attrs": [] }
 	}
