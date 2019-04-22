@@ -49,7 +49,7 @@ if [ $THEME_ENGINE = $ENGINE_POWERLINE ]; then
     # There may be a better way of doing this, but for now this works across all of my machines
 
     if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]; then
-        source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh 
+        source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
     fi
 
     if [ -f /home/jdob/.local/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh ]; then
@@ -77,10 +77,13 @@ alias k=kubectl
 
 # -- Python ----------
 
+WORKON_HOME=~/.envs
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-  WORKON_HOME=~/.envs
-  source /usr/bin/virtualenvwrapper.sh 
-  export VIRTUAL_ENV_DISABLE_PROMPT=1
+  source /usr/bin/virtualenvwrapper.sh
+fi
+
+if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+  source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
 # -- Go ----------
