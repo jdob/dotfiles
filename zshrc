@@ -82,6 +82,12 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
   source /usr/bin/virtualenvwrapper.sh
 fi
 
+# MacOS (maybe also Ubuntu?)
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# Ubuntu
 if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
   source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
