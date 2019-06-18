@@ -88,12 +88,12 @@ fi
 
 # -- Go ----------
 
-export GOPATH=$HOME/.go
-export PATH=$PATH:/home/jdob/.go/bin
+export GOPATH=$HOME/Code/go
+export PATH=$GOPATH/bin:$PATH
 
 # -- Functions ----------
 
-bb () {
+__bb () {
   $*
   RESULT=$?
   RESULT_TXT="FAILED"
@@ -127,6 +127,12 @@ bindkey '^[[1;5C' forward-word
 # Not sure who is setting this, but GREP_OPTIONS is deprecated, so unset
 # it here to silence the annoying message.
 unset GREP_OPTIONS
+
+# Share history
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
 
 # -- Local Override ----------
 
