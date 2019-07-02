@@ -99,7 +99,7 @@ export PATH=$GOPATH/bin:$PATH
 
 # -- Functions ----------
 
-__bb () {
+bb () {
   $*
   RESULT=$?
   RESULT_TXT="FAILED"
@@ -109,7 +109,9 @@ __bb () {
     SOUND="/home/jdob/.sounds/bb8-success.wav"
   fi
   notify-send "$RESULT_TXT :: $*"
-  aplay "$SOUND" -q
+  if [ -f $SOUND ]; then
+    aplay "$SOUND" -q
+  fi
 }
 
 git-branch-cleanup () {
