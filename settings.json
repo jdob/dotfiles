@@ -1,21 +1,66 @@
 {
+    // -- Editor ----------
+
     "editor.cursorStyle": "block-outline",
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
     "editor.rulers": [80],
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestSelection": "first",
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 80,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+    // -- VS Code Other ----------
+
+    "extensions.ignoreRecommendations": false,
 
     "files.autoSave": "onFocusChange",
     "files.trimTrailingWhitespace": true,
 
     "terminal.integrated.fontSize": 14,
 
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
 
     "workbench.colorCustomizations": {
         "statusBar.background":"#1A1A1A",
         "statusBar.noFolderBackground" : "#212121",
         "statusBar.debuggingBackground": "#263238"
     },
-    "workbench.sideBar.location": "left"
+    "workbench.sideBar.location": "left",
+    "workbench.startupEditor": "none",
+
+    // -- Asciidoc ----------
+
+    "[asciidoc]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80,
+        "editor.quickSuggestions": false
+    },
+
+    // -- Golang ----------
+
+    "[go]": {
+        "editor.formatOnSave": false,
+        "editor.wordWrap": "off"
+    },
+
+    // -- Python ----------
+
+    "python.venvPath": "~/.envs",
+    "python.jediEnabled": false,
+    "spellright.language": [
+        "en_US"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "asciidoc"
+    ]
 }
