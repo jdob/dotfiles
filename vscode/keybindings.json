@@ -6,7 +6,7 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+x o",
+        "key": "ctrl+k \\",
         "command": "workbench.action.navigateEditorGroups"
     }
 ]
