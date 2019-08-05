@@ -136,11 +136,12 @@ bindkey '^[[1;5C' forward-word
 # it here to silence the annoying message.
 unset GREP_OPTIONS
 
-# Share history
-# Appends every command to the history file once it is executed
-setopt inc_append_history
-# Reloads the history whenever you use it
-setopt share_history
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
 
 # -- Local Override ----------
 
