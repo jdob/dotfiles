@@ -1,0 +1,12 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+w",
+        "command": "-editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k \\",
+        "command": "workbench.action.navigateEditorGroups"
+    }
+]
