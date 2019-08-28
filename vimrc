@@ -10,3 +10,8 @@ set backspace=indent,eol,start
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+set cursorcolumn
+
+set cursorline
+highlight CursorLine ctermbg=darkgray cterm=none
