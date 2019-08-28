@@ -65,6 +65,7 @@ alias tree="tree -C"
 alias ls="ls --color"
 alias ll="ls -l"
 alias ..="cd .."
+alias watch="watch "
 
 alias c="colorls"
 alias cs="colorls -1 --sd"
@@ -141,7 +142,7 @@ unset GREP_OPTIONS
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=1000
-setopt SHARE_HISTORY
+unsetopt SHARE_HISTORY
 
 # -- Local Override ----------
 
