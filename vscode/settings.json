@@ -62,5 +62,6 @@
         "latex",
         "plaintext",
         "asciidoc"
-    ]
+    ],
+    "workbench.colorTheme": "Monokai Dimmed"
 }
