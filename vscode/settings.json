@@ -16,6 +16,18 @@
     "editor.wordWrapColumn": 80,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
+    // -- Spell Check ----------
+
+    "spellright.language": [
+        "en_US"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "asciidoc"
+    ],
+
     // -- VS Code Other ----------
 
     "extensions.ignoreRecommendations": false,
@@ -43,6 +55,14 @@
         "editor.quickSuggestions": false
     },
 
+    // -- Markdown ----------
+
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80,
+        "editor.quickSuggestions": false
+    },
+
     // -- Golang ----------
 
     "[go]": {
@@ -54,14 +74,14 @@
 
     "python.venvPath": "~/.envs",
     "python.jediEnabled": false,
-    "spellright.language": [
-        "en_US"
-    ],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "plaintext",
-        "asciidoc"
-    ],
-    "workbench.colorTheme": "Monokai Dimmed"
+
+    // -- HTML ----------
+
+    "html.autoClosingTags": false,
+
+    // -- JavaScript ----------
+
+    "javascript.autoClosingTags": false,
+    "workbench.colorTheme": "Monokai"
+
 }
