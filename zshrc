@@ -8,8 +8,8 @@ fi
 
 ENGINE_OH_MY_ZSH=1
 ENGINE_POWERLINE=2
-THEME_ENGINE=$ENGINE_POWERLINE
-# THEME_ENGINE=$ENGINE_OH_MY_ZSH
+# THEME_ENGINE=$ENGINE_POWERLINE
+THEME_ENGINE=$ENGINE_OH_MY_ZSH
 
 # -- Oh My Zsh ----------
 
@@ -22,7 +22,7 @@ if [ $THEME_ENGINE = $ENGINE_OH_MY_ZSH ]; then
     # Optionally, if you set this to "random", it'll load a random theme each
     # time that oh-my-zsh is loaded.
     ZSH_THEME="jdob"
-    ZSH_THEME="powerlevel9k/powerlevel9k"
+    # ZSH_THEME="powerlevel9k/powerlevel9k"
 
     # Set to this to use case-sensitive completion
     # CASE_SENSITIVE="true"
@@ -78,7 +78,7 @@ alias k=kubectl
 
 # -- Python ----------
 
-WORKON_HOME=~/.envs
+WORKON_HOME=~/Code/.venvs
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
   source /usr/bin/virtualenvwrapper.sh
 fi
