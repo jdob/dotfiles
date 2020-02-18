@@ -93,6 +93,8 @@ if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
   source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # -- Go ----------
 
 export GOPATH=$HOME/Code/go
