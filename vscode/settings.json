@@ -47,6 +47,14 @@
     "workbench.sideBar.location": "left",
     "workbench.startupEditor": "none",
 
+    // -- Text ----------
+
+    "[txt]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80,
+        "editor.quickSuggestions": false
+    },
+
     // -- Asciidoc ----------
 
     "[asciidoc]": {
