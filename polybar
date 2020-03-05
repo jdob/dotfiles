@@ -76,7 +76,7 @@ padding-left = 4
 padding-right = 4
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 4
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
