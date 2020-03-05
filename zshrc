@@ -129,6 +129,10 @@ docker-image-clean() {
   docker rmi $(docker images -q)
 }
 
+oc-running() {
+  oc get pods | grep -v deploy
+}
+
 # -- Misc ----------
 
 setopt nocorrectall
@@ -139,12 +143,12 @@ bindkey '^[[1;5C' forward-word
 # it here to silence the annoying message.
 unset GREP_OPTIONS
 
-
 # History
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=1000
+# HISTFILE=~/.zsh_history
+# HISTSIZE=10000
+# SAVEHIST=1000
 unsetopt SHARE_HISTORY
+export HISTCONTROL=erasedups:ignorespace
 
 # -- Local Override ----------
 
