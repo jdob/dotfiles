@@ -67,10 +67,6 @@ alias ll="ls -l"
 alias ..="cd .."
 alias watch="watch "
 
-alias c="colorls"
-alias cs="colorls -1 --sd"
-alias csa="colorls -A"
-
 alias vi=vim
 alias emacs=emacs -nw
 
@@ -98,6 +94,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # -- Go ----------
 
 export GOPATH=$HOME/Code/go
+export GOROOT=$HOME/Code/go-1.12
 export PATH=$GOPATH/bin:$PATH
 
 # -- Functions ----------
@@ -143,12 +140,23 @@ bindkey '^[[1;5C' forward-word
 # it here to silence the annoying message.
 unset GREP_OPTIONS
 
+# Not sure who is setting this, but it's getting in the way of system themes
+unset LS_COLORS
+
 # History
 # HISTFILE=~/.zsh_history
 # HISTSIZE=10000
 # SAVEHIST=1000
 unsetopt SHARE_HISTORY
 export HISTCONTROL=erasedups:ignorespace
+
+# Local Binaries
+export PATH=~/.local/bin:~/Applications/bin:$PATH
+
+# pywal
+# (cat $HOME/.config/wpg/sequences &)
+(cat ~/.cache/wal/sequences &)
+
 
 # -- Local Override ----------
 
