@@ -59,7 +59,9 @@ height = 20
 radius = 0.0
 fixed-center = true
 
+;xrandr -q | grep " connected" | cut -d ' ' -f1
 ;monitor = ${env:MONITOR:HDMI-1}
+monitor = XWAYLAND0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -85,7 +87,7 @@ font-3 = siji:pixelsize=10;1
 
 ; modules-left =
 ; modules-center = date
-modules-right = pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = pulseaudio memory cpu eth temperature date powermenu
 
 ; Examples:
 ;   modules-left = bspwm i3
@@ -226,18 +228,19 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-;format-volume = <label-volume> <bar-volume>
-format-volume = <bar-volume>
+format-volume = <label-volume> <bar-volume>
+;format-volume = <bar-volume>
 
 ;label-volume = %percentage%%
-label-volume = %{A1:gnome-control-center wifi:}%percentage%%{A}
-label-volume-foreground = ${root.foreground}
+;label-volume = %{A1:gnome-control-center sound:}%percentage%%{A}
+label-volume = %{A1:gnome-control-center sound:} %{A}
+label-volume-foreground = ${colors.foreground-alt}
 ;label-volume-foreground = ${xrdb:color2:#222}
 
 label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 7
 
 ; Color changing based on volume
 ;bar-volume-foreground = ${xrdb:color6:#222}
@@ -262,9 +265,14 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.background-alt}
 
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+;ramp-volume-0 = 🔈
+;ramp-volume-1 = 🔉
+;ramp-volume-2 = 🔊
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
 
 
 ; ## Battery ##################################################################
