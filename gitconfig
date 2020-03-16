@@ -1,0 +1,5 @@
+[user]
+	name = jdob
+	email = jdobies@redhat.com
+[core]
+	editor = vim
