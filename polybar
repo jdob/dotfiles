@@ -11,8 +11,6 @@
 ;
 ;==============================================================================
 
-; == Notes =====
-; key = ${xrdb:KEY:fallback value}
 
 ; ## General ##################################################################
 
@@ -28,6 +26,7 @@ screenchange-reload = true
 margin-top = 0
 margin-bottom = 0
 
+
 ; ## Colors ###################################################################
 
 [colors]
@@ -37,13 +36,6 @@ background-alt = ${xrdb:color1:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color6:#222}
 
-;foreground = #dfdfdf
-;foreground-alt = #aaa
-
-primary = ${xrdb:color7:#222}
-secondary = ${xrdb:color6:#222}
-alert = #bd2c40
-
 ; Example defaults:
 ;   foreground = #dfdfdf
 ;   foreground-alt = #aaa
@@ -51,9 +43,10 @@ alert = #bd2c40
 ;   secondary = #e60053
 ;   alert = #bd2c40
 
+
 ; ## Bar ######################################################################
 
-[bar/jdob]
+[bar/desktop]
 width = 100%
 height = 20
 radius = 0.0
@@ -101,11 +94,13 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+
 ; ## XWindow ##################################################################
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
 
 ; ## MPD ######################################################################
 
@@ -122,6 +117,7 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
+
 ; ## CPU ######################################################################
 
 [module/cpu]
@@ -136,6 +132,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 label = %percentage:2%%
 
+
 ; ## Memory ###################################################################
 
 [module/memory]
@@ -149,6 +146,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 
 label = %percentage_used%%
+
 
 ; ## WLAN #####################################################################
 
@@ -181,6 +179,7 @@ format-disconnected =
 ramp-signal-0 = "  "
 ramp-signal-foreground = ${colors.foreground-alt}
 
+
 ; ## ETH ######################################################################
 
 [module/eth]
@@ -203,6 +202,7 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+
 ; ## Date/Time ################################################################
 
 [module/date]
@@ -223,6 +223,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
 
+
 ; ## Audio ####################################################################
 
 [module/pulseaudio]
@@ -231,9 +232,10 @@ type = internal/pulseaudio
 format-volume = <label-volume> <bar-volume>
 ;format-volume = <bar-volume>
 
+label-volume = %{A1:gnome-control-center sound:} %{A}
 ;label-volume = %percentage%%
 ;label-volume = %{A1:gnome-control-center sound:}%percentage%%{A}
-label-volume = %{A1:gnome-control-center sound:} %{A}
+
 label-volume-foreground = ${colors.foreground-alt}
 ;label-volume-foreground = ${xrdb:color2:#222}
 
@@ -255,11 +257,11 @@ bar-volume-width = 7
 
 bar-volume-indicator = ●
 bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = ${xrdb:color3:#222}
+bar-volume-indicator-foreground = ${colors.foreground-alt}
 
 bar-volume-fill = ─
 bar-volume-fill-font = 2
-bar-volume-fill-foreground = ${xrdb:color2:#222}
+bar-volume-fill-foreground = ${colors.foreground-alt}
 
 bar-volume-empty = ─
 bar-volume-empty-font = 2
@@ -272,7 +274,6 @@ bar-volume-empty-foreground = ${colors.background-alt}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-
 
 
 ; ## Battery ##################################################################
@@ -331,6 +332,7 @@ animation-discharging-foreground = ${colors.foreground-alt}
 ;animation-discharging-foreground = ${colors.foreground-alt}
 ;animation-discharging-framerate = 750
 
+
 ; ## Temperature ##############################################################
 
 [module/temperature]
@@ -346,7 +348,7 @@ format-warn = <ramp> <label-warn>
 
 label = %temperature-f%
 label-warn = %temperature-f%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.foreground-alt}
 
 ; Siji
 ;ramp-0 = 
@@ -358,7 +360,8 @@ ramp-1 = " "
 ramp-2 = " "
 ramp-foreground = ${colors.foreground-alt}
 
-; ## Power Menu ##############################################################
+
+; ## Power Menu ###############################################################
 
 [module/powermenu]
 type = custom/menu
@@ -371,9 +374,9 @@ format-spacing = 1
 ;   label-open = 
 ;   label-close =  cancel
 label-open = ""
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.foreground-alt}
 label-close = cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.foreground-alt}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
@@ -393,3 +396,8 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
 ; vim:ft=dosini
+
+
+; ## Notes ####################################################################
+; key = ${xrdb:KEY:fallback value}
+
