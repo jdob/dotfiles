@@ -53,8 +53,12 @@ radius = 0.0
 fixed-center = true
 
 ;xrandr -q | grep " connected" | cut -d ' ' -f1
-;monitor = ${env:MONITOR:HDMI-1}
-monitor = XWAYLAND0
+
+; For xorg
+monitor = DVI-I-1
+
+; For Wayland
+;monitor = XWAYLAND0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
