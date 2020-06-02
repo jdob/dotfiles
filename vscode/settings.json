@@ -82,7 +82,7 @@
     // -- JavaScript ----------
 
     "javascript.autoClosingTags": false,
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Monokai Dimmed",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true
 
