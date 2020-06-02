@@ -36,7 +36,9 @@ if [ $THEME_ENGINE = $ENGINE_OH_MY_ZSH ]; then
     # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
-    plugins=(git docker sudo)
+    # plugins=(git docker sudo)
+    # plugins=(git python go oc sudo zsh-autosuggestions)
+    plugins=(git python go sudo)
 
     # Start oh-my-zsh
     source $ZSH/oh-my-zsh.sh
