@@ -17,7 +17,6 @@ body, body * {
     text-decoration: unset;
 }
 
-
 @media (max-width: 800px) {
     .links-container {
         flex-direction: column !important;
@@ -139,7 +138,7 @@ input {
 /* categories */
 
 .redhat,
-.social,
+.team,
 .programming {
     width: auto;
     position: relative;
@@ -151,16 +150,14 @@ input {
 .redhat {
     order: 0;
 }
-
-.social {
+.team {
     order: 1;
 }
-
 .programming {
     order: 2;
 }
 
-#redhat-h, #social-h, #programming-h{
+#redhat-h, #team-h, #programming-h{
     font-weight: bold;
 
 }
@@ -168,7 +165,7 @@ input {
     color: var(--red);
 }
 
-#social-h {
+#team-h {
     color: var(--orange);
 }
 
