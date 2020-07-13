@@ -128,6 +128,14 @@ docker-image-clean() {
   docker rmi $(docker images -q)
 }
 
+podman-clean() {
+  podman rm $(podman ps -a -q)
+}
+
+podman-image-clean() {
+  podman rmi $(podman images -q)
+}
+
 oc-running() {
   oc get pods | grep -v deploy
 }
