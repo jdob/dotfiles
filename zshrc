@@ -8,8 +8,8 @@ fi
 
 ENGINE_OH_MY_ZSH=1
 ENGINE_POWERLINE=2
-THEME_ENGINE=$ENGINE_POWERLINE
-# THEME_ENGINE=$ENGINE_OH_MY_ZSH
+# THEME_ENGINE=$ENGINE_POWERLINE
+THEME_ENGINE=$ENGINE_OH_MY_ZSH
 
 # -- Oh My Zsh ----------
 
@@ -22,7 +22,7 @@ if [ $THEME_ENGINE = $ENGINE_OH_MY_ZSH ]; then
     # Optionally, if you set this to "random", it'll load a random theme each
     # time that oh-my-zsh is loaded.
     ZSH_THEME="jdob"
-    ZSH_THEME="powerlevel9k/powerlevel9k"
+    # ZSH_THEME="powerlevel9k/powerlevel9k"
 
     # Set to this to use case-sensitive completion
     # CASE_SENSITIVE="true"
@@ -36,7 +36,9 @@ if [ $THEME_ENGINE = $ENGINE_OH_MY_ZSH ]; then
     # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
     # Example format: plugins=(rails git textmate ruby lighthouse)
-    plugins=(git docker sudo)
+    # plugins=(git docker sudo)
+    # plugins=(git python go oc sudo zsh-autosuggestions)
+    plugins=(git python go sudo)
 
     # Start oh-my-zsh
     source $ZSH/oh-my-zsh.sh
@@ -67,10 +69,6 @@ alias ll="ls -l"
 alias ..="cd .."
 alias watch="watch "
 
-alias c="colorls"
-alias cs="colorls -1 --sd"
-alias csa="colorls -A"
-
 alias vi=vim
 alias emacs=emacs -nw
 
@@ -78,7 +76,7 @@ alias k=kubectl
 
 # -- Python ----------
 
-WORKON_HOME=~/.envs
+WORKON_HOME=~/Code/.venvs
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
   source /usr/bin/virtualenvwrapper.sh
 fi
@@ -93,9 +91,12 @@ if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
   source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 fi
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # -- Go ----------
 
 export GOPATH=$HOME/Code/go
+#export GOROOT=$HOME/Code/go-1.12
 export PATH=$GOPATH/bin:$PATH
 
 # -- Functions ----------
@@ -127,6 +128,10 @@ docker-image-clean() {
   docker rmi $(docker images -q)
 }
 
+oc-running() {
+  oc get pods | grep -v deploy
+}
+
 # -- Misc ----------
 
 setopt nocorrectall
@@ -137,12 +142,23 @@ bindkey '^[[1;5C' forward-word
 # it here to silence the annoying message.
 unset GREP_OPTIONS
 
+# Not sure who is setting this, but it's getting in the way of system themes
+unset LS_COLORS
 
 # History
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=1000
+# HISTFILE=~/.zsh_history
+# HISTSIZE=10000
+# SAVEHIST=1000
 unsetopt SHARE_HISTORY
+export HISTCONTROL=erasedups:ignorespace
+
+# Local Binaries
+export PATH=~/.local/bin:~/Applications/bin:$PATH
+
+# pywal
+# (cat $HOME/.config/wpg/sequences &)
+(cat ~/.cache/wal/sequences &)
+
 
 # -- Local Override ----------
 
