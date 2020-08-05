@@ -1,1 +1,2 @@
 kubectl config use-context minikube
+export EXTRA_ENV=minikube
