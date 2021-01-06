@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Polybar
+Comment=Polybar startup script
+Exec=/usr/bin/polybar laptop
+StartupNotify=false
+Terminal=false

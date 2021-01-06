@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=PyWal
+Comment=PyWal startup script
+Exec=/usr/local/bin/wal -R
+StartupNotify=false
+Terminal=false
+
