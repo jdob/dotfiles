@@ -3,9 +3,9 @@
 " python3 powerline_setup()
 " python3 del powerline_setup
 
-"set nobackup       "no backup files
-"set nowritebackup  "only in case you don't want a backup file while editing
-"set noswapfile     "no swap files
+set nobackup       "no backup files
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap files
 
 set background=dark
 set laststatus=2
