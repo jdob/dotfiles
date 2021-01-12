@@ -74,6 +74,8 @@ alias emacs=emacs -nw
 
 alias k=kubectl
 
+alias files="xdg-open ."
+
 # -- Python ----------
 
 WORKON_HOME=~/Code/.venvs
