@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon[en_US]=/home/jdob/Applications/pycharm/bin/pycharm.png
+Name[en_US]=JetBrains PyCharm
+Exec=/home/jdob/Applications/pycharm/bin/pycharm.sh
+Name=JetBrains PyCharm
+Icon=/home/jdob/Applications/pycharm/bin/pycharm.png
+
