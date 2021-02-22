@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon[en_US]=/home/jdob/Applications/goland/bin/goland.png
+Name[en_US]=JetBrains GoLand
+Exec=/home/jdob/Applications/goland/bin/goland.sh
+Name=JetBrains GoLand
+Icon=/home/jdob/Applications/goland/bin/goland.png
+

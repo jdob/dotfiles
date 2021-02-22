@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon[en_US]=/home/jdob/Applications/intellij/bin/idea.png
+Name[en_US]=JetBrains IntelliJ
+Exec=/home/jdob/Applications/intellij/bin/idea.sh
+Name=JetBrains IntelliJ
+Icon=/home/jdob/Applications/intellij/bin/idea.png
