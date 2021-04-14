@@ -101,6 +101,10 @@ export GOPATH=$HOME/Code/go
 #export GOROOT=$HOME/Code/go-1.12
 export PATH=$GOPATH/bin:$PATH
 
+# -- kubectl ----------
+
+export KUBE_EDITOR=vim
+
 # -- Functions ----------
 
 bb () {
