@@ -15,6 +15,9 @@ THEME_ENGINE=$ENGINE_OH_MY_ZSH
 
 if [ $THEME_ENGINE = $ENGINE_OH_MY_ZSH ]; then
 
+    # Disable warning on mac
+    ZSH_DISABLE_COMPFIX=true
+
     # Path to your oh-my-zsh configuration.
     ZSH=$HOME/Code/oh-my-zsh
 
@@ -163,8 +166,9 @@ export PATH=~/.local/bin:~/Applications/bin:$PATH
 
 # pywal
 # (cat $HOME/.config/wpg/sequences &)
-(cat ~/.cache/wal/sequences &)
-
+if [ -f ~/.cache/wal/sequences ]; then
+    (cat ~/.cache/wal/sequences &)
+fi
 
 # -- Local Override ----------
 
