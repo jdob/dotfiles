@@ -24,7 +24,7 @@ if [ $THEME_ENGINE = $ENGINE_OH_MY_ZSH ]; then
     # Set name of the theme to load.
     # Optionally, if you set this to "random", it'll load a random theme each
     # time that oh-my-zsh is loaded.
-    ZSH_THEME="jdob"
+    ZSH_THEME="jdob-g"
     # ZSH_THEME="powerlevel9k/powerlevel9k"
 
     # Set to this to use case-sensitive completion
