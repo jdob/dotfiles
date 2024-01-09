@@ -170,6 +170,10 @@ if [ -f ~/.cache/wal/sequences ]; then
     (cat ~/.cache/wal/sequences &)
 fi
 
+# oh-my-zsh turns this on by default, meaning every cd will push the previous
+# directory to the stack
+unsetopt auto_pushd
+
 # -- Local Override ----------
 
 if [ -f ~/.localrc ]; then
