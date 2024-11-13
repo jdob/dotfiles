@@ -100,7 +100,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # -- Go ----------
 
-export GOPATH=$HOME/Code/go
+export GOPATH=$HOME/Code/.go
 #export GOROOT=$HOME/Code/go-1.12
 export PATH=$GOPATH/bin:$PATH
 
