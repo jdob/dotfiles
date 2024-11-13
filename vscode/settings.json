@@ -5,15 +5,15 @@
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
-    "editor.rulers": [80],
+    "editor.rulers": [110],
     "editor.quickSuggestions": {
         "other": false,
         "comments": false,
         "strings": false
     },
     "editor.suggestSelection": "first",
-    "editor.wordWrap": "off",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 110,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
     // -- Spell Check ----------
@@ -33,11 +33,8 @@
     "extensions.ignoreRecommendations": false,
 
     "files.autoSave": "onFocusChange",
-    "files.trimTrailingWhitespace": true,
 
     "terminal.integrated.fontSize": 14,
-
-    "window.zoomLevel": 0,
 
     "workbench.colorCustomizations": {
         "statusBar.background":"#1A1A1A",
@@ -52,7 +49,11 @@
     "[txt]": {
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 80,
-        "editor.quickSuggestions": false
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
     },
 
     // -- Asciidoc ----------
@@ -60,7 +61,11 @@
     "[asciidoc]": {
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 80,
-        "editor.quickSuggestions": false
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
     },
 
     // -- Markdown ----------
@@ -68,7 +73,11 @@
     "[markdown]": {
         "editor.wordWrap": "wordWrapColumn",
         "editor.wordWrapColumn": 80,
-        "editor.quickSuggestions": false
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
     },
 
     // -- Golang ----------
@@ -92,6 +101,7 @@
     "javascript.autoClosingTags": false,
     "workbench.colorTheme": "Monokai Dimmed",
     "go.formatTool": "goimports",
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "explorer.confirmDelete": false
 
 }
