@@ -99,9 +99,9 @@
     // -- JavaScript ----------
 
     "javascript.autoClosingTags": false,
-    "workbench.colorTheme": "Monokai Dimmed",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "Monokai"
 
 }
