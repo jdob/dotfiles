@@ -104,6 +104,12 @@ export GOPATH=$HOME/Code/.go
 #export GOROOT=$HOME/Code/go-1.12
 export PATH=$GOPATH/bin:$PATH
 
+# -- Node.js ----------
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # -- kubectl ----------
 
 export KUBE_EDITOR=vim
@@ -179,4 +185,3 @@ unsetopt auto_pushd
 if [ -f ~/.localrc ]; then
     . ~/.localrc
 fi
-
