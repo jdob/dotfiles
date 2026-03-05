@@ -131,6 +131,12 @@ bb () {
   fi
 }
 
+is-done () {
+  EXIT_CODE=$?
+  LAST_CMD=$(fc -ln -1 | sed 's/ *[;&|]* *is-done.*//' | sed 's/^ *//')
+  notify-send "Command exited with code $EXIT_CODE"
+}
+
 git-branch-cleanup () {
   git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D
 }
