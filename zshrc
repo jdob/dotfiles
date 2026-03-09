@@ -110,13 +110,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# -- Ruby ----------
+
+if command -v rbenv &>/dev/null; then
+  eval "$(rbenv init - zsh)"
+fi
+
 # -- kubectl ----------
 
 export KUBE_EDITOR=vim
 
 # -- Functions ----------
 
-bb () {
+_bb () {
   $*
   RESULT=$?
   RESULT_TXT="FAILED"
@@ -131,10 +137,19 @@ bb () {
   fi
 }
 
-is-done () {
-  EXIT_CODE=$?
-  LAST_CMD=$(fc -ln -1 | sed 's/ *[;&|]* *is-done.*//' | sed 's/^ *//')
-  notify-send "Command exited with code $EXIT_CODE"
+bb () {
+  local START_NS END_NS ELAPSED_MS
+  START_NS=$(date +%s%N)
+  "$@"
+  END_NS=$(date +%s%N)  
+  local EXIT_CODE=$?
+  ELAPSED_MS=$(( (END_NS - START_NS) / 1000000 ))
+
+  local TITLE
+  [[ $EXIT_CODE -eq 0 ]] && TITLE="SUCCESS" || TITLE="FAILURE" 
+
+  # notify-send "${TITLE}" "Command '$*' exited with code ${EXIT_CODE} in ${ELAPSED_MS}ms"
+  notify-send "${TITLE}" "$* :: ${EXIT_CODE} :: ${ELAPSED_MS}ms"
 }
 
 git-branch-cleanup () {
