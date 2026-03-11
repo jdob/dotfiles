@@ -1,0 +1,23 @@
+fohr-connect-db () {
+  docker exec -u 0 -it fohr-backend-database-1 bash
+}
+
+fohr-connect-web () {
+  docker exec -u 0 -it fohr-backend-web-1 bash
+}
+
+fohr-web-up () {
+  docker compose up --no-deps web
+}
+
+fohr-db-local () {
+  cp ~/Code/fohr/db-envs/database.local ~/Code/fohr/fohr-backend/docker/envs/database
+}
+
+fohr-db-staging () {
+  cp ~/Code/fohr/db-envs/database.staging ~/Code/fohr/fohr-backend/docker/envs/database
+}
+
+fohr-console () {
+  docker compose exec web bin/rails c
+}
