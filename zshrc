@@ -156,14 +156,17 @@ git-branch-cleanup () {
   git branch --merged main | grep -v '^\*\|main\|master\|develop' | xargs git branch -d  
 }
 
-docker-clean() {
+docker-clean () {
   docker rm $(docker ps -a -q)
 }
 
-docker-image-clean() {
+docker-image-clean () {
   docker rmi $(docker images -q)
 }
 
+docker-ps () {
+  docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}"
+}
 # -- Misc ----------
 
 setopt nocorrectall
