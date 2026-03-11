@@ -101,7 +101,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # -- Go ----------
 
 export GOPATH=$HOME/Code/.go
-#export GOROOT=$HOME/Code/go-1.12
 export PATH=$GOPATH/bin:$PATH
 
 # -- Node.js ----------
@@ -153,7 +152,8 @@ bb () {
 }
 
 git-branch-cleanup () {
-  git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D
+  git fetch --prune
+  git branch --merged main | grep -v '^\*\|main\|master\|develop' | xargs git branch -d  
 }
 
 docker-clean() {
@@ -162,10 +162,6 @@ docker-clean() {
 
 docker-image-clean() {
   docker rmi $(docker images -q)
-}
-
-oc-running() {
-  oc get pods | grep -v deploy
 }
 
 # -- Misc ----------
