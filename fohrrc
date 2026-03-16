@@ -21,3 +21,16 @@ fohr-db-staging () {
 fohr-console () {
   docker compose exec web bin/rails c
 }
+
+fohr-local-tests () {
+  bundle exec rspec --format d --tag ~passing:false
+}
+
+warp-up () {
+  warp-cli connect
+}
+
+warp-down () {
+  warp-cli disconnect
+  sudo cp /home/jdob/Code/fohr/warp/resolv.home /etc/resolv.conf
+}
