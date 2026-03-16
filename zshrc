@@ -140,8 +140,8 @@ bb () {
   local START_NS END_NS ELAPSED_MS
   START_NS=$(date +%s%N)
   "$@"
-  END_NS=$(date +%s%N)  
   local EXIT_CODE=$?
+  END_NS=$(date +%s%N)
   ELAPSED_MS=$(( (END_NS - START_NS) / 1000000 ))
 
   local TITLE
