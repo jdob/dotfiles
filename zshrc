@@ -121,19 +121,8 @@ export KUBE_EDITOR=vim
 
 # -- Functions ----------
 
-_bb () {
-  $*
-  RESULT=$?
-  RESULT_TXT="FAILED"
-  SOUND="/home/jdob/.sounds/bb8-failure.wav"
-  if [ "$RESULT" -eq "0" ]; then
-    RESULT_TXT="SUCCESS"
-    SOUND="/home/jdob/.sounds/bb8-success.wav"
-  fi
-  notify-send "$RESULT_TXT :: $*"
-  if [ -f $SOUND ]; then
-    aplay "$SOUND" -q
-  fi
+reload-zsh () {
+  source ~/.zshrc
 }
 
 bb () {
@@ -145,7 +134,16 @@ bb () {
   ELAPSED_MS=$(( (END_NS - START_NS) / 1000000 ))
 
   local TITLE
-  [[ $EXIT_CODE -eq 0 ]] && TITLE="SUCCESS" || TITLE="FAILURE" 
+  local SOUND
+  if [[ $EXIT_CODE -eq 0 ]]; then
+    TITLE="SUCCESS"
+    SOUND=~/Code/jdob/dotfiles/sounds/bb8-success.wav
+  else
+    TITLE="FAILURE" 
+    SOUND=~/Code/jdob/dotfiles/sounds/bb8-failure.wav
+  fi
+
+  command -v aplay &>/dev/null && aplay "$SOUND" &>/dev/null
 
   # notify-send "${TITLE}" "Command '$*' exited with code ${EXIT_CODE} in ${ELAPSED_MS}ms"
   notify-send "${TITLE}" "$* :: ${EXIT_CODE} :: ${ELAPSED_MS}ms"
