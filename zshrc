@@ -154,6 +154,21 @@ git-branch-cleanup () {
   git branch --merged main | grep -v '^\*\|main\|master\|develop' | xargs git branch -d  
 }
 
+check-git-repos() {
+    local DIR="${1:-.}"
+    local GIT_STATUS
+
+    for REPO in "$DIR"/*/; do
+        [[ -d "$REPO/.git" ]] || continue
+
+        GIT_STATUS=$(git -C "$REPO" status --porcelain)
+
+        if [[ -n "$GIT_STATUS" ]]; then
+            echo "$(basename "$REPO"): uncommitted changes"
+        fi
+    done
+}
+
 docker-clean () {
   docker rm $(docker ps -a -q)
 }
