@@ -26,11 +26,11 @@ fohr-local-tests () {
   bundle exec rspec --format d --tag ~passing:false
 }
 
-warp-up () {
+fohr-warp-up () {
   warp-cli connect
 }
 
-warp-down () {
+fohr-warp-down () {
   warp-cli disconnect
   sudo cp /home/jdob/Code/fohr/warp/resolv.home /etc/resolv.conf
 }
