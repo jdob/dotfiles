@@ -27,10 +27,12 @@ fohr-local-tests () {
 }
 
 fohr-warp-up () {
+  sudo systemctl start warp-svc
   warp-cli connect
 }
 
 fohr-warp-down () {
   warp-cli disconnect
   sudo cp /home/jdob/Code/fohr/warp/resolv.home /etc/resolv.conf
+  sudo systemctl stop warp-svc
 }
