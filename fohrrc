@@ -28,6 +28,7 @@ fohr-local-tests () {
 
 fohr-warp-up () {
   sudo systemctl start warp-svc
+  sleep 3
   warp-cli connect
 }
 
@@ -35,4 +36,16 @@ fohr-warp-down () {
   warp-cli disconnect
   sudo cp /home/jdob/Code/fohr/warp/resolv.home /etc/resolv.conf
   sudo systemctl stop warp-svc
+}
+
+fohr-gemfile-skip () {
+  git update-index --skip-worktree Gemfile*
+}
+
+fohr-gemfile-no-skip () {
+  git update-index --no-skip-worktree Gemfile*
+}
+
+fohr-docker-test-cleanup () {
+  COMPOSE_PROJECT_NAME=fohr-backend-ci docker compose -f docker-compose.ci.yml down
 }
