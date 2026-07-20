@@ -10,12 +10,16 @@ fohr-web-up () {
   docker compose up --no-deps web
 }
 
+fohr-infra-up() {
+  docker compose up database cdn-proxy redis elasticsearch s3mock sidekiq 
+}
+
 fohr-db-local () {
-  cp ~/Code/fohr/db-envs/database.local ~/Code/fohr/fohr-backend/docker/envs/database
+  cp ~/Code/fohr/etc/database.local ~/Code/fohr/fohr-backend/docker/envs/database
 }
 
 fohr-db-staging () {
-  cp ~/Code/fohr/db-envs/database.staging ~/Code/fohr/fohr-backend/docker/envs/database
+  cp ~/Code/fohr/etc/database.staging ~/Code/fohr/fohr-backend/docker/envs/database
 }
 
 fohr-console () {
@@ -48,4 +52,8 @@ fohr-gemfile-no-skip () {
 
 fohr-docker-test-cleanup () {
   COMPOSE_PROJECT_NAME=fohr-backend-ci docker compose -f docker-compose.ci.yml down
+}
+
+fohr-ci-tests () {
+  bb make ci-test
 }
