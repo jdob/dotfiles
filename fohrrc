@@ -11,7 +11,7 @@ fohr-web-up () {
 }
 
 fohr-infra-up() {
-  docker compose up database cdn-proxy redis elasticsearch s3mock sidekiq 
+  docker compose up database cdn-proxy redis elasticsearch s3mock
 }
 
 fohr-db-local () {
@@ -28,6 +28,10 @@ fohr-console () {
 
 fohr-local-tests () {
   bundle exec rspec --format d --tag ~passing:false
+}
+
+fohr-run-test () {
+  bundle exec rspec "$@"
 }
 
 fohr-warp-up () {
