@@ -1,10 +1,36 @@
-fohr-connect-db () {
-  docker exec -u 0 -it fohr-backend-database-1 bash
+# == Local Environment ==
+
+fohr-env-local () {
+  source ~/Code/fohr/etc/local-backend
 }
 
-fohr-connect-web () {
-  docker exec -u 0 -it fohr-backend-web-1 bash
+fohr-env-dev () {
+  source ~/Code/fohr/etc/local-backend-dev-db
 }
+
+# == Backend Tests ==
+
+fohr-unit-tests () {
+  if [ "$EXTRA_ENV" != "local-db" ]; then
+    echo "EXTRA_ENV must be set to 'local-db' to run fohr-unit-tests"
+    return 1
+  fi
+  bb bundle exec rspec --format d --tag ~passing:false
+}
+
+fohr-run-test () {
+  bundle exec rspec "$@"
+}
+
+fohr-ci-tests () {
+  bb make ci-test
+}
+
+fohr-docker-test-cleanup () {
+  COMPOSE_PROJECT_NAME=fohr-backend-ci docker compose -f docker-compose.ci.yml down
+}
+
+# == Container Start ==
 
 fohr-web-up () {
   docker compose up --no-deps web
@@ -14,29 +40,7 @@ fohr-infra-up() {
   docker compose up database cdn-proxy redis elasticsearch s3mock
 }
 
-fohr-db-local () {
-  cp ~/Code/fohr/etc/database.local ~/Code/fohr/fohr-backend/docker/envs/database
-}
-
-fohr-db-staging () {
-  cp ~/Code/fohr/etc/database.staging ~/Code/fohr/fohr-backend/docker/envs/database
-}
-
-fohr-console () {
-  docker compose exec web bin/rails c
-}
-
-fohr-local-tests () {
-  if [ "$EXTRA_ENV" != "local" ]; then
-    echo "EXTRA_ENV must be set to 'local' to run fohr-local-tests"
-    return 1
-  fi
-  bb bundle exec rspec --format d --tag ~passing:false
-}
-
-fohr-run-test () {
-  bundle exec rspec "$@"
-}
+# == VPN ==
 
 fohr-warp-up () {
   sudo systemctl start warp-svc
@@ -50,6 +54,8 @@ fohr-warp-down () {
   sudo systemctl stop warp-svc
 }
 
+# == Git Shortcuts ==
+
 fohr-gemfile-skip () {
   git update-index --skip-worktree Gemfile*
 }
@@ -58,10 +64,16 @@ fohr-gemfile-no-skip () {
   git update-index --no-skip-worktree Gemfile*
 }
 
-fohr-docker-test-cleanup () {
-  COMPOSE_PROJECT_NAME=fohr-backend-ci docker compose -f docker-compose.ci.yml down
+# == Connect to Docker Containers ==
+
+fohr-connect-db () {
+  docker exec -u 0 -it fohr-backend-database-1 bash
 }
 
-fohr-ci-tests () {
-  bb make ci-test
+fohr-connect-web () {
+  docker exec -u 0 -it fohr-backend-web-1 bash
+}
+
+fohr-console () {
+  docker compose exec web bin/rails c
 }
