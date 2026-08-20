@@ -27,7 +27,11 @@ fohr-console () {
 }
 
 fohr-local-tests () {
-  bundle exec rspec --format d --tag ~passing:false
+  if [ "$EXTRA_ENV" != "local" ]; then
+    echo "EXTRA_ENV must be set to 'local' to run fohr-local-tests"
+    return 1
+  fi
+  bb bundle exec rspec --format d --tag ~passing:false
 }
 
 fohr-run-test () {
