@@ -30,6 +30,12 @@ fohr-docker-test-cleanup () {
   COMPOSE_PROJECT_NAME=fohr-backend-ci docker compose -f docker-compose.ci.yml down
 }
 
+# == Formatting ==
+
+fohr-sorbet () {
+  bundle exec srb tc "$@"
+}
+
 # == Container Start ==
 
 fohr-web-up () {
