@@ -36,6 +36,10 @@ fohr-sorbet () {
   bundle exec srb tc "$@"
 }
 
+fohr-tapioca () {
+  bundle exec tapioca dsl
+}
+
 # == Container Start ==
 
 fohr-web-up () {
