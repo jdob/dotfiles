@@ -32,6 +32,35 @@ fohr-docker-test-cleanup () {
 
 # == Formatting ==
 
+fohr-rubocop () {
+  bundle exec standardrb "$@"
+}
+
+fohr-rubocop-changed () {
+  local root
+  root=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "Not inside a git repository." >&2; return 1; }
+
+  local files=()
+  while IFS= read -r line; do
+    local status=${line:0:2}
+    local path=${line:3}
+    case "$status" in
+      *A*|*M*)
+        case "$path" in
+          *.rb|*.rake|*.gemspec|Gemfile|Rakefile) files+=("$path") ;;
+        esac
+        ;;
+    esac
+  done < <(git -C "$root" status --porcelain=v1)
+
+  if [[ ${#files[@]} -eq 0 ]]; then
+    echo "No added or modified Ruby files to lint."
+    return 0
+  fi
+
+  (cd "$root" && bundle exec standardrb "${files[@]}")
+}
+
 fohr-sorbet () {
   bundle exec srb tc "$@"
 }
