@@ -41,7 +41,7 @@ if [ $THEME_ENGINE = $ENGINE_OH_MY_ZSH ]; then
     # Example format: plugins=(rails git textmate ruby lighthouse)
     # plugins=(git docker sudo)
     # plugins=(git python go oc sudo zsh-autosuggestions)
-    plugins=(git python go sudo)
+    plugins=(git python sudo ruby rails)
 
     # Start oh-my-zsh
     source $ZSH/oh-my-zsh.sh
