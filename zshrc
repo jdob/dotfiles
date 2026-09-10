@@ -180,6 +180,11 @@ docker-image-clean () {
 docker-ps () {
   docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}"
 }
+
+watchfn () {
+  watch "zsh -i -c '$*'"
+}
+
 # -- Misc ----------
 
 setopt nocorrectall
