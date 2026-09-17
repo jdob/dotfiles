@@ -69,6 +69,12 @@ fohr-tapioca () {
   bundle exec tapioca dsl
 }
 
+fohr-refresh () {
+  docker compose up -d database redis elasticsearch s3mock cdn-proxy
+  docker compose run --rm web bin/rails db:migrate
+  docker compose run --rm --entrypoint bash web -lc 'bundle exec tapioca dsl'
+}
+
 # == Container Start ==
 
 fohr-web-up () {
