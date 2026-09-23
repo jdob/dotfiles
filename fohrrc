@@ -58,7 +58,7 @@ fohr-rubocop-changed () {
     return 0
   fi
 
-  bb (cd "$root" && bundle exec standardrb "${files[@]}")
+  (cd "$root" && bb bundle exec standardrb "${files[@]}")
 }
 
 fohr-sorbet () {
