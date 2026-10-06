@@ -8,6 +8,18 @@ fohr-env-dev () {
   source ~/Code/fohr/etc/local-backend-dev-db
 }
 
+fohr-gemfile-20 () {
+  echo "Configuring environment for red-arrow 20"
+  cp ~/Code/fohr/etc/Gemfile.20 ~/Code/fohr/fohr-backend/Gemfile
+  cp ~/Code/fohr/etc/Gemfile.lock.20 ~/Code/fohr/fohr-backend/Gemfile.lock
+}
+
+fohr-gemfile-24 () {
+  echo "Configuring environment for red-arrow 24"
+  cp ~/Code/fohr/etc/Gemfile.24 ~/Code/fohr/fohr-backend/Gemfile
+  cp ~/Code/fohr/etc/Gemfile.lock.24 ~/Code/fohr/fohr-backend/Gemfile.lock
+}
+
 # == Backend Tests ==
 
 fohr-unit-tests () {
@@ -23,7 +35,9 @@ fohr-run-test () {
 }
 
 fohr-ci-tests () {
+  fohr-gemfile-24
   bb make ci-test
+  fohr-gemfile-20
 }
 
 fohr-docker-test-cleanup () {
@@ -70,11 +84,11 @@ fohr-tapioca () {
 }
 
 fohr-refresh () {
-  cp ~/Code/fohr/etc/Gemfile.24 ~/Code/fohr/fohr-backend/Gemfile
+  fohr-gemfile-24
   docker compose up -d database redis elasticsearch s3mock cdn-proxy
   docker compose run --rm web bin/rails db:migrate
   docker compose run --rm --entrypoint bash web -lc 'bundle exec tapioca dsl'
-  cp ~/Code/fohr/etc/Gemfile.20 ~/Code/fohr/fohr-backend/Gemfile
+  fohr-gemfile-20
   bb echo "Refresh Completed"
 }
 
